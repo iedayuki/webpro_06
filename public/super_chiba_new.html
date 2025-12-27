@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>千葉県スーパー：新規追加</title>
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;background:#f6f7fb;color:#222;}
+    .wrap{max-width:640px;margin:48px auto;padding:0 16px;}
+    .card{background:#fff;border:1px solid #e6e8ef;border-radius:16px;padding:24px;box-shadow:0 8px 24px rgba(0,0,0,0.06);}
+    h1{font-size:20px;margin:0 0 6px 0;}
+    .sub{margin:0 0 16px 0;font-size:13px;color:#555;}
+    form{display:grid;gap:14px;}
+    .row{display:grid;gap:6px;}
+    label{font-size:13px;color:#333;}
+    input[type="text"]{width:100%;padding:10px 12px;border:1px solid #d7dbe7;border-radius:10px;background:#fff;outline:none;font-size:14px;box-sizing:border-box;}
+    input[type="text"]:focus{border-color:#7aa7ff;box-shadow:0 0 0 4px rgba(122,167,255,0.2);}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px;}
+    input[type="submit"]{appearance:none;border:0;border-radius:12px;padding:10px 14px;background:#2f6fed;color:#fff;font-weight:600;cursor:pointer;box-shadow:0 8px 18px rgba(47,111,237,0.25);}
+    .cancel{display:inline-block;border:1px solid #d7dbe7;border-radius:12px;padding:10px 14px;text-decoration:none;color:#333;background:#fff;font-weight:600;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>千葉県スーパーの追加</h1>
+      <p class="sub">各項目を入力して登録してください。</p>
+
+      <form action="/super_chiba" method="POST">
+        <div class="row">
+          <label>店名</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="row">
+          <label>市区町村</label>
+          <input type="text" name="city" required>
+        </div>
+        <div class="row">
+          <label>カテゴリ</label>
+          <input type="text" name="category" required>
+        </div>
+        <div class="row">
+          <label>営業時間</label>
+          <input type="text" name="hours" required>
+        </div>
+        <div class="row">
+          <label>メモ</label>
+          <input type="text" name="note">
+        </div>
+
+        <div class="actions">
+          <input type="submit" value="登録">
+          <a class="cancel" href="/super_chiba">キャンセル</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+

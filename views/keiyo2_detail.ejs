@@ -1,0 +1,58 @@
+<!Doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+  <style>
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+      background:#f6f7fb; color:#222;
+    }
+    .wrap{ max-width: 720px; margin: 48px auto; padding: 0 16px; }
+    .card{
+      background:#fff; border:1px solid #e6e8ef; border-radius:16px;
+      padding:24px; box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    h1{ font-size: 20px; margin:0 0 6px 0; }
+    .sub{ margin:0 0 16px 0; font-size: 13px; color:#555; }
+
+    table{ width:100%; border-collapse: collapse; overflow:hidden; border-radius:12px; }
+    th, td{ padding: 12px 10px; border-bottom: 1px solid #eef0f6; font-size: 14px; }
+    th{ text-align:left; background:#f3f5fb; width: 38%; }
+
+    .actions{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 16px; justify-content:flex-end;
+    }
+    .btn{
+      display:inline-block; border-radius:12px; padding:10px 14px;
+      text-decoration:none; font-weight:600;
+      border:1px solid #d7dbe7; color:#333; background:#fff;
+    }
+    .btn.primary{ border:0; background:#2f6fed; color:#fff; box-shadow: 0 8px 18px rgba(47,111,237,0.25); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1><%= data.name %>の詳細</h1>
+      <p class="sub">登録されている駅情報を表示します。</p>
+
+      <table>
+        <tr><th>項目</th><th>データ</th></tr>
+        <tr><td>ID</td><td><%= data.code %></td></tr>
+        <tr><td>駅名</td><td><%= data.name %></td></tr>
+        <tr><td>乗り換え線</td><td><%= data.change %></td></tr>
+        <tr><td>乗降客数</td><td><%= data.passengers %></td></tr>
+        <tr><td>東京駅からの距離</td><td><%= data.distance %></td></tr>
+      </table>
+
+      <div class="actions">
+        <a class="btn primary" href="/keiyo2/edit/<%= id %>">編集</a>
+        <a class="btn" href="/keiyo2">駅一覧に戻る</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
